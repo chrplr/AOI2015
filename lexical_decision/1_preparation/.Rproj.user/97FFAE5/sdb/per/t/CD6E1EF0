@@ -1,0 +1,16 @@
+{
+    "contents" : "Example: Selection of items from Lexique\n========================================\n\nWe load the main lexique database:\n```{r}\nrm(list=ls())\n\n# load Lexique corpus\nlexique <- read.table(\"Lexique380.utf8.txt\",\n                      header=T, as.is=T, \n                      comment.char='%', sep='\\t', quote=\"|\", \n                      encoding='UTF-8')\n```\n\n\nWe search for 4 to 6 letter words who are 4 phons long and display their (log) frequency\n\n```{r}\nw4 <- subset(lexique, (X15_nblettres %in% 4:6) & (X16_nbphons==4),\n            select=c(\"X1_ortho\",\"X17_cvcv\",\"X15_nblettres\",\"X2_phon\",\"X18_p_cvcv\",\n            \"X16_nbphons\",\"X9_freqfilms2\",\"X4_cgram\",\"X14_islem\"))\nnames(w4) <- c('ortho','cvcv','nletters','phon','pcvcv','nphons','freq','cgram','islem')\nw4$logfreq <- log10(w4$freq + 0.001)\nhead(w4) # see some items\nnrow(w4) # how many items in total\n```\n\n```{r fig.width=7, fig.height=6}\nhist(w4$logfreq)\n```\n\nWe theshold at logfreq>0 and select nouns and verbs\n\n```{r}\nw4s <- subset(w4, logfreq>0)\nnouns <- subset(w4s, cgram=='NOM' & islem==1)\nverbs <- subset(w4s, cgram=='VER' & islem==1)\nnrow(nouns)\nnrow(verbs)\n```\n\n\nWe create experimental lists by mixing randomly sampled sets of verbs and nouns\n\n```{r}\nnlists <- 30\nnitems <- 10\nfnpattern <- 'liste_%02d.csv'\nfor (explist in 1:nlists)\n  {\n    n <- nouns[sample(nrow(nouns),nitems),]\n    v <- verbs[sample(nrow(verbs),nitems),]\n    liste <- rbind(n, v)\n    liste <- liste[sample(nrow(liste)),]\n    write.csv(liste, file = sprintf(fnpattern, explist))\n  }\n```",
+    "created" : 1371388354269.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1751893637",
+    "id" : "CD6E1EF0",
+    "lastKnownWriteTime" : 1371390659,
+    "path" : "~/Documents/presentations/LabGeneve2013/lexique_search/lexique_search.Rmd",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_markdown"
+}

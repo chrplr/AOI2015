@@ -1,0 +1,21 @@
+{
+    "contents" : "",
+    "created" : 1371389371167.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "44E275D9",
+    "lastKnownWriteTime" : 6,
+    "path" : null,
+    "properties" : {
+        "contentUrl" : "content?title=Data%3A+nouns.ending.in.er&file=a22cbdbbaa164dfc9778aadefa2ebf24.htm",
+        "displayedObservations" : 573,
+        "displayedVariables" : 11,
+        "title" : "Data: nouns.ending.in.er",
+        "totalObservations" : 573,
+        "variables" : 10
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

@@ -1,0 +1,21 @@
+{
+    "contents" : "",
+    "created" : 1371489668448.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "C8769294",
+    "lastKnownWriteTime" : 176093659229,
+    "path" : null,
+    "properties" : {
+        "contentUrl" : "content?title=Data%3A+w4&file=c2361130fde447e78cccabea38c2365b.htm",
+        "displayedObservations" : 1000,
+        "displayedVariables" : 11,
+        "title" : "Data: w4",
+        "totalObservations" : 9793,
+        "variables" : 10
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}
