@@ -1,0 +1,44 @@
+---
+title: "exploring lexique"
+author: "Christophe Pallier <christophe@pallier.org>"
+date: "03/02/2015"
+output: html_document
+---
+
+We load lexique:
+
+```{r load}
+a = read.csv('lexique_small.csv', fileEncoding='utf-8')
+```
+
+First we plot the histogram of log10 of the frequencies of word
+
+
+```{r histo}
+data = hist(log10(a$freq), nclass=100)
+plot(data$breaks[-1], log10(data$counts))
+```
+
+Now, we select words 
+
+```{r}
+lf4 = a$word[a$nbletters==4 & (log10(a$freq)>0) & log10(a$freq)<.5]
+hf4 = a$word[a$nbletters==4 & (log10(a$freq)>2) & log10(a$freq)<2.5]
+lf6 = a$word[a$nbletters==6 & (log10(a$freq)>0) & log10(a$freq)<.5]
+hf6 = a$word[a$nbletters==6 & (log10(a$freq)>2) & log10(a$freq)<2.5]
+```
+
+
+```{r}
+nitems = 45
+lf4final = sample(lf4, nitems)
+hf4final = sample(hf4, nitems)
+lf6final = sample(lf6, nitems)
+hf6final = sample(hf6, nitems)
+
+```
+
+```{r}
+write.csv(data.frame(lf4final, hf4final, lf6final, hf6final), "words.csv")
+```
+
