@@ -1,0 +1,100 @@
+"","word","gramcat","freq","nbletters"
+"1","a","NOM",81.36,1
+"2","a","AUX",6350.91,1
+"3","a","VER",5498.34,1
+"4","a capella","ADV",0.04,9
+"5","a cappella","ADV",0.04,10
+"6","a contrario","ADV",0,11
+"7","a fortiori","ADV",0.04,10
+"8","a giorno","ADV",0,8
+"9","a jeun","ADV",0.18,6
+"10","a l'instar","PRE",0.26,10
+"11","a posteriori","ADV",0.01,12
+"12","a priori","ADV",0.63,8
+"13","a priori","NOM",0.41,8
+"14","aa","NOM",0.01,2
+"15","ab absurdo","ADV",0,10
+"16","ab initio","ADV",0.01,9
+"17","ab ovo","ADV",0,6
+"18","abaca","NOM",0.01,5
+"19","abaissa","VER",0,7
+"20","abaissai","VER",0.1,8
+"21","abaissaient","VER",0,11
+"22","abaissait","VER",0.02,9
+"23","abaissant","ADJ",0.03,9
+"24","abaissant","VER",0.01,9
+"25","abaissante","ADJ",0.01,10
+"26","abaisse","NOM",0.02,7
+"27","abaisse","VER",1.28,7
+"28","abaisse-langue","NOM",0.04,14
+"29","abaissement","NOM",0.31,11
+"30","abaissent","VER",0.05,9
+"31","abaisser","VER",1.09,8
+"32","abaissera","VER",0.19,9
+"33","abaisserai","VER",0.1,10
+"34","abaisseraient","VER",0.01,13
+"35","abaisserais","VER",0.13,11
+"36","abaisserait","VER",0.02,11
+"37","abaisses","VER",0.16,8
+"38","abaissez","VER",0.53,8
+"39","abaissons","VER",0.02,9
+"40","abaissèrent","VER",0,11
+"41","abaissé","VER",0.74,7
+"42","abaissé","ADJ",0.03,7
+"43","abaissée","VER",0.17,8
+"44","abaissée","ADJ",0,8
+"45","abaissées","VER",0.01,9
+"46","abaissées","ADJ",0.02,9
+"47","abaissés","VER",0.3,8
+"48","abaissés","ADJ",0.01,8
+"49","abalone","NOM",0.01,7
+"50","abalones","NOM",0,8
+"51","abandon","NOM",4.77,7
+"52","abandonna","VER",0.59,9
+"53","abandonnai","VER",0.27,10
+"54","abandonnaient","VER",0.07,13
+"55","abandonnais","VER",0.35,11
+"56","abandonnait","VER",1.04,11
+"57","abandonnant","VER",1.15,11
+"58","abandonnas","VER",0,10
+"59","abandonne","VER",24.04,9
+"60","abandonnent","VER",2.44,11
+"61","abandonner","VER",28.37,10
+"62","abandonnera","VER",1.52,11
+"63","abandonnerai","VER",2.39,12
+"64","abandonneraient","VER",0.02,15
+"65","abandonnerais","VER",0.93,13
+"66","abandonnerait","VER",0.23,13
+"67","abandonneras","VER",0.3,12
+"68","abandonnerez","VER",0.14,12
+"69","abandonneriez","VER",0.23,13
+"70","abandonnerions","VER",0.01,14
+"71","abandonnerons","VER",0.39,13
+"72","abandonneront","VER",0.41,13
+"73","abandonnes","VER",4.13,10
+"74","abandonneurs","NOM",0,12
+"75","abandonnez","VER",5.72,10
+"76","abandonniez","VER",0.14,11
+"77","abandonnions","VER",0.06,12
+"78","abandonnique","ADJ",0,12
+"79","abandonnons","VER",1.06,11
+"80","abandonnâmes","VER",0,12
+"81","abandonnât","VER",0,10
+"82","abandonnèrent","VER",0.16,13
+"83","abandonné","VER",22.56,9
+"84","abandonné","ADJ",3.84,9
+"85","abandonnée","VER",7.34,10
+"86","abandonnée","ADJ",2.94,10
+"87","abandonnées","VER",1.27,11
+"88","abandonnées","ADJ",0.44,11
+"89","abandonnés","VER",3.55,10
+"90","abandonnés","ADJ",1.05,10
+"91","abandons","NOM",0.07,8
+"92","abaque","NOM",0,6
+"93","abasourdi","ADJ",0.24,9
+"94","abasourdi","VER",0.35,9
+"95","abasourdie","ADJ",0.14,10
+"96","abasourdie","VER",0.12,10
+"97","abasourdir","VER",0.01,10
+"98","abasourdis","ADJ",0.02,10
+"99","abasourdis","VER",0.07,10
