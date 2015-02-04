@@ -17,8 +17,11 @@ def generate_pseudo(size):
 def generate_pseudo2(word):
     n = len(word)
     p = random.randint(0, n - 1)
-    return word[:p] + random.choice(ALLLETTERS) + word[(p + 1):]
-
+    while True:
+        pw = word[0:p] + random.choice(ALLLETTERS) + word[(p + 1):n]
+        if pw != word:
+            break
+    return(pw)
 
 if __name__ == '__main__':
     for i in range(20):
