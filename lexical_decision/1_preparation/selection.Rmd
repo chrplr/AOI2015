@@ -9,6 +9,7 @@ We load lexique:
 
 ```{r load}
 a = read.csv('lexique_small.csv', fileEncoding='utf-8')
+a = subset(a, gramcat=='NOM')
 ```
 
 First we plot the histogram of log10 of the frequencies of word
@@ -22,23 +23,26 @@ plot(data$breaks[-1], log10(data$counts))
 Now, we select words 
 
 ```{r}
-lf4 = a$word[a$nbletters==4 & (log10(a$freq)>0) & log10(a$freq)<.5]
-hf4 = a$word[a$nbletters==4 & (log10(a$freq)>2) & log10(a$freq)<2.5]
-lf6 = a$word[a$nbletters==6 & (log10(a$freq)>0) & log10(a$freq)<.5]
-hf6 = a$word[a$nbletters==6 & (log10(a$freq)>2) & log10(a$freq)<2.5]
+lf4 = a$word[a$nbletters==4 & (log10(a$freq)>0.5) & log10(a$freq)<1]
+hf4 = a$word[a$nbletters==4 & (log10(a$freq)>2) & log10(a$freq)<3]
+lf6 = a$word[a$nbletters==6 & (log10(a$freq)>0.5) & log10(a$freq)<1]
+hf6 = a$word[a$nbletters==6 & (log10(a$freq)>2) & log10(a$freq)<3]
 ```
 
 
 ```{r}
 nitems = 45
-lf4final = sample(lf4, nitems)
-hf4final = sample(hf4, nitems)
-lf6final = sample(lf6, nitems)
-hf6final = sample(hf6, nitems)
+lf4final = as.character(sample(lf4, nitems))
+hf4final = as.character(sample(hf4, nitems))
+lf6final = as.character(sample(lf6, nitems))
+hf6final = as.character(sample(hf6, nitems))
 
 ```
 
 ```{r}
-write.csv(data.frame(lf4final, hf4final, lf6final, hf6final), "words.csv")
+d = data.frame(length=gl(2, 90, 180, labels=c('l4','l6')),
+               freq=gl(2, 45, 180, labels=c('lf', 'hf')),
+               item=c(lf4final, hf4final, lf6final, hf6final))
+write.csv(d, "words.csv")
 ```
 

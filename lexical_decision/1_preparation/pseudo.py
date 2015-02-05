@@ -24,5 +24,7 @@ def generate_pseudo2(word):
     return(pw)
 
 if __name__ == '__main__':
-    for i in range(20):
-        print generate_pseudo2('bonjour')
+    import sys
+    for line in sys.stdin:
+        word = line.rstrip().decode('utf-8')
+        print generate_pseudo2(word).encode('utf-8')
