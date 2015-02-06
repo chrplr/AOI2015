@@ -1,0 +1,78 @@
+---
+title: "TP lexical decision"
+author: "Christophe Pallier <christophe@pallier.org>"
+date: "06/02/2015"
+output: html_document
+---
+
+Loading the data
+
+```{r}
+rm(list=ls()) # clean workspace
+
+csvfiles = Sys.glob("subject*.csv") 
+
+alldata = data.frame()
+
+for (i in 1:length(csvfiles) )
+{
+  tab = read.csv(csvfiles[i])
+  alldata = rbind(alldata, tab[, c('correct', 'length', 'freq', 'item', 
+                                   'response_time', 'subject_nr', 'count_logger')])
+}
+```
+
+
+Clean reaction times
+
+```{r}
+hist(alldata$response_time, nclass=50)
+cleandata = subset(alldata, (response_time > 300) & (response_time < 1500))
+nrow(cleandata)/nrow(alldata)
+```
+
+We remove items with less than 51% correct responses:
+
+```{r}
+itemacc = aggregate(cleandata$correct, list(item=cleandata$item), mean)
+badwords = itemacc$item[itemacc$x < .51]
+cleandata2 = subset(cleandata, ! (item %in% badwords))
+nrow(cleandata2)/nrow(cleandata)
+```
+
+```{r}
+subjacc = aggregate(cleandata2$correct, list(subject=cleandata2$subject_nr), mean)
+subjacc
+stripchart(subjacc$x)
+
+
+subjrt = aggregate(cleandata2$response_time, list(subject=cleandata2$subject_nr), mean)
+subjrt
+stripchart(subjrt$x)
+plot(subjrt$x, subjacc$x, xlim=c(500, 750), ylim=c(.8, 1.0), xlab='RT',ylab='hits')
+
+```
+
+```{r}
+# remove pseudowords
+lex = with(subset(cleandata2, ! (freq=='pw')),
+           aggregate(response_time, list(freq=freq, length=length, subject=subject_nr), mean))
+
+# Test for the effect of frequency
+freqlex = with(lex, aggregate(x, list(freq=freq, subject=subject), mean))
+t.test(x ~ freq, data=freqlex, paired=TRUE)
+
+# Test for the effect of length
+lenlex = with(lex, aggregate(x, list(length=length, subject=subject), mean))
+t.test(x ~ length, data=lenlex, paired=TRUE)
+```
+
+
+
+
+
+
+
+
+
+
