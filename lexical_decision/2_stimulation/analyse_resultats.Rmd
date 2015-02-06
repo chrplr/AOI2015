@@ -1,0 +1,24 @@
+---
+title: "lex dec"
+author: "Christophe Pallier <christophe@pallier.org>"
+date: "05/02/2015"
+output: html_document
+---
+
+```{r}
+a = read.csv('subject-20.csv')
+
+```
+
+Taux de réussite
+
+```{r}
+mean(a$acc)
+```
+
+Temps de réaction
+
+```{r}
+hist(a$response_time, nclass=20)
+```
+
